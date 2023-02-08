@@ -1,0 +1,54 @@
+<div class="head_div">
+  <div class="head">
+    <h1>CURRENCY CONVERTER</h1>
+  </div>
+</div>
+
+<div class="page">
+  <div class="main-container">
+    <div class="amm_div">
+      <label for="ammount">Enter Amount</label>
+      <input
+        #amount
+        type="text"
+        class="amm"
+        id="ammount"
+        (change)="amount_in(amount.value)"
+      />
+      <!-- amount_in
+      change keydown paste input -->
+    </div>
+    <div class="select_div">
+      <select
+        #fromCurrency
+        class="slct"
+        id="fromCurrency"
+        name="country_1"
+        (mouseleave)="changebase(fromCurrency.value)"
+      >
+        <option value="INR" class="opt">Indian Rupees</option>
+        <option value="USD" class="opt">US Dollar</option>
+        <option value="POUNDS" class="opt">Pounds</option>
+      </select>
+      <p>&rarr;</p>
+      <select
+        #toCurrency
+        class="slct"
+        name="country_1"
+        (mouseleave)="toCountry(toCurrency.value)"
+      >
+        <option value="INR" class="opt">Indian Rupees</option>
+        <option value="USD" class="opt">US Dollar</option>
+        <option value="POUNDS" class="opt">Pounds</option>
+      </select>
+    </div>
+    <div class="sub_div">
+      <button class="sub_btn"  #submitButton (click)="convert()">SUBMIT</button>
+    </div>
+    <div class="result_div" #resValue>
+      <p>{{ out }} {{ base }}</p>
+      <p> = </p>
+      <p>{{ res }} {{ con }}</p>
+    </div>
+  </div>
+</div>
